@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campbell Dibb — Brand Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #141317;
+    --card: #1c1b21;
+    --line: #2d2c33;
+    --text: #f1eee8;
+    --muted: #8b877f;
+    --accent: #c1502e;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html{ background: var(--bg); }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family:'Archivo', sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap{ max-width: 940px; margin: 0 auto; padding: 0 24px; }
+  a{ color: inherit; }
+  a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .mono{ font-family:'JetBrains Mono', monospace; }
+
+  header{
+    padding: 76px 0 50px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  header h1{
+    font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+  }
+  header p{
+    margin-top: 16px;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+
+  main{ padding: 50px 0 90px; }
+  .cards{
+    display: grid;
+    gap: 18px;
+  }
+  .card{
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 26px;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 26px 28px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover{
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  @media (max-width: 640px){
+    .card{ grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  .swatch{
+    height: 84px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .swatch-editorial{ background: #0d0c10; color: #b8925a; border: 1px solid #29282f; }
+  .swatch-ledger{ background: #f0ead9; color: #9b3a26; border: 1px solid #c9bfa6; }
+  .swatch-broadsheet{ background: #f7f5f0; color: #d9382a; border: 2px solid #111013; }
+  .swatch-blueprint{
+    background-color: #0e2038;
+    background-image:
+      linear-gradient(rgba(140,180,220,0.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(140,180,220,0.18) 1px, transparent 1px);
+    background-size: 14px 14px;
+    color: #ffb454;
+    border: 1px solid #7d97b3;
+  }
+
+  .card-body h2{
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+  }
+  .card-body .style-line{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+  .card-body p{
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+  .card-open{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--line);
+    padding: 10px 18px;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover .card-open{
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  @media (max-width: 640px){
+    .card-open{ justify-self: start; }
+  }
+
+  .note{
+    margin-top: 40px;
+    padding: 22px 26px;
+    border: 1px dashed var(--line);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note b{ color: var(--text); }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 24px 0 44px;
+  }
+  footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Brand concepts, pick one</div>
+    <h1>Campbell Dibb<br>Four directions</h1>
+    <p>Four different takes on the same brief: promote Campbell's work as a barber, drive people to his Instagram, and credit Known without selling for them. Open each one, view it on your phone as well as a laptop, and pick the one that feels like him.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="cards">
+
+      <a class="card" href="campbell-dibb-editorial.html">
+        <div class="swatch swatch-editorial">Dark / Brass</div>
+        <div class="card-body">
+          <h2>01. The Editorial</h2>
+          <div class="style-line">Lookbook, oversized type, marquee</div>
+          <p>Dark and confident, built like a fashion lookbook. His name huge at the top, cuts indexed as numbered looks. The safest strong choice.</p>
+        </div>
+        <span class="card-open">Open</span>
+      </a>
+
+      <a class="card" href="campbell-dibb-ledger.html">
+        <div class="swatch swatch-ledger">Paper / Stamp</div>
+        <div class="card-body">
+          <h2>02. The Ledger</h2>
+          <div class="style-line">Typewriter, cut records, analogue</div>
+          <p>An old appointment book brought to life. Every photo mounted like a taped-in record with a figure number. Quiet, crafted, personal.</p>
+        </div>
+        <span class="card-open">Open</span>
+      </a>
+
+      <a class="card" href="index.html" style="border-color: var(--accent);">
+        <div class="swatch swatch-broadsheet">Print / Red</div>
+        <div class="card-body">
+          <h2>03. The Broadsheet <span style="font-family:'JetBrains Mono', monospace; font-size:0.6rem; letter-spacing:0.1em; background:var(--accent); color:var(--text); padding:4px 10px; border-radius:2px; vertical-align:middle; margin-left:8px;">LOCKED IN</span></h2>
+          <div class="style-line">Magazine masthead, cover story, issues</div>
+          <p>His brand as a music magazine front page. DIBB as the masthead, cuts written up like features, following him framed as subscribing. Loud and cultural. The chosen direction, the others below are kept as alternates.</p>
+        </div>
+        <span class="card-open">Open</span>
+      </a>
+
+      <a class="card" href="campbell-dibb-blueprint.html">
+        <div class="swatch swatch-blueprint">Navy / Grid</div>
+        <div class="card-body">
+          <h2>04. The Blueprint</h2>
+          <div class="style-line">Technical drawing, callouts, spec table</div>
+          <p>Precision as the whole brand. Cuts and tools annotated like engineering schematics on a drafting grid. Nobody else in barbering looks like this.</p>
+        </div>
+        <span class="card-open">Open</span>
+      </a>
+
+    </div>
+
+    <div class="note">
+      <b>Note for Campbell:</b> the photos in every concept are atmosphere shots for now. The plan is to replace them with your real cut photos one at a time as you shoot them. Keep all four files in the same folder for these links to work.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Campbell Dibb, Barber</span>
+    <span>Nottingham</span>
+  </div>
+</footer>
+
+</body>
+</html>
